@@ -2,7 +2,9 @@
 <div>
     <home-header></home-header>
     <home-swiper :list='swiperList'></home-swiper>
-    <home-icons :list="iconList"></home-icons>
+    <!-- <home-app :list="labList"></home-app> -->
+    <!-- <home-app :list="labList"></home-app> -->
+    <home-demo></home-demo>
     <home-recommend :list="recommendList"></home-recommend>
 </div>
 </template>
@@ -10,21 +12,22 @@
 <script>
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
-import HomeIcons from './components/Icons'
+// import HomeApp from './components/App'
 import HomeRecommend from './components/Recommend'
+import HomeDemo from './components/Demo'
 import axios from 'axios'
 export default{
   name: 'Home',
   components: {
     HomeHeader,
     HomeSwiper,
-    HomeIcons,
-    HomeRecommend
+    HomeRecommend,
+    HomeDemo
   },
   data: function () {
     return {
       swiperList: [],
-      iconList: [],
+      lyTabList: [],
       recommendList: []
     }
   },
@@ -37,7 +40,7 @@ export default{
       if (res.ret && res.data) {
         const data = res.data
         this.swiperList = data.swiperList
-        this.iconList = data.iconList
+        this.lyTabList = data.lyTabList
         this.recommendList = data.recommendList
       }
       console.log(res)

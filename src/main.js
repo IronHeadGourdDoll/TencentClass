@@ -9,7 +9,9 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import LyTab from 'ly-tab'
 
+Vue.use(LyTab)
 Vue.config.productionTip = false
 // fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
