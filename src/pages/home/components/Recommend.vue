@@ -1,6 +1,17 @@
 <template>
   <div>
-    <div class="title">热销推荐</div>
+    <div class="title">考研推荐</div>
+    <ul>
+      <router-link tag="li" class="item" v-for="item of list" :key="item.id" :to="'/detail/'+item.id">
+          <img :src="item.imgUrl"  alt="" class="item_img">
+          <div class="item_info">
+            <p class="item_title">{{item.title}}</p>
+            <p class="item_desc">{{item.desc}}</p>
+            <p class="item_price">{{item.price}}</p>
+          </div>
+      </router-link>
+    </ul>
+    <div class="title">IT互联网推荐</div>
     <ul>
       <router-link tag="li" class="item" v-for="item of list" :key="item.id" :to="'/detail/'+item.id">
           <img :src="item.imgUrl"  alt="" class="item_img">
@@ -36,7 +47,7 @@ export default{
     height: 1.9rem;
   }
   .item_img{
-    width: 1.7rem;
+    width: 2.5rem;
     height: 1.7rem;
     padding: .1rem;
   }
@@ -60,5 +71,10 @@ export default{
     padding: 0 .2rem;
     border-radius: .06rem;
     color: #fff;
+  }
+  .item_price{
+    text-align: right;
+    line-height: .20rem;
+    margin-right: .150rem;
   }
 </style>
